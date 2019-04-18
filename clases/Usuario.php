@@ -69,4 +69,31 @@ class Usuario{
         }
         
     }
+    
+    function ActualizaClave(){
+        /*Verficamos la existencia*/
+        $db= new DBConnect();
+        $dblink=$db->conexion();
+        
+        if (!isset($dblink)){
+            return false;
+        }
+        
+        $PDOst=$dblink->prepare('update usuario set clave=? where idusuario=?');
+        
+        $PDOst->execute(array($this->nomusuario,$this->clave));
+        
+//        $row=$PDOst->fetch(PDO::FETCH_OBJ);
+        
+        if ($row=$PDOst->fetch(PDO::FETCH_OBJ)){
+            $this->nombre=$row->nombre;
+            return true;
+        }
+        else{
+             return false;   
+        }
+        
+    }
+    
+    
 }
