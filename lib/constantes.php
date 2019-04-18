@@ -6,11 +6,11 @@
  * and open the template in the editor.
  */
 
-define("URLBASE","http://localhost:8081/login/");
+define("URLBASE","http://localhost/dbconexion/");
 /*
  * Parametros DB
  * **/
 define("DBNAME","leyes");
 define("DBUSR","duoc");
-define("DBPWD","php2019");
+define("DBPWD","");
 define("DBHOST","localhost");
